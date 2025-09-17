@@ -1,0 +1,230 @@
+/* ===== Brand & Global ===== */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #181c40;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+a {
+  color: #d8bd7d;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Header ===== */
+.site-header {
+  background: #11152d;
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-header .brand {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #faf2aa;
+}
+.site-header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+.site-header nav a {
+  color: #b9c7d9;
+  font-weight: bold;
+}
+.site-header nav a.active {
+  color: #d8bd7d;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #181c40, #5290c9);
+  color: #fff;
+}
+.hero.small {
+  padding: 40px 20px;
+}
+.hero h2 {
+  font-size: 2rem;
+}
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #d8bd7d;
+  color: #181c40;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.cta-button:hover {
+  background: #faf2aa;
+}
+
+/* ===== Calculator Container ===== */
+.calculator-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.calc-section {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.calc-section h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #faf2aa;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 8px;
+  border: 1px solid #b9c7d9;
+  background: #181c40;
+  color: #fff;
+}
+input[type="range"] {
+  width: 100%;
+}
+
+/* ===== Savings Boxes ===== */
+.savings-box {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #fff;
+}
+.savings-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.savings-line:last-child {
+  margin-bottom: 0;
+}
+.icon-interest {
+  color: #ff4d4f; /* red for money saved */
+}
+.icon-time {
+  color: #ff9800; /* orange for time saved */
+}
+.savings-note {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* ===== Piggy Bank Box ===== */
+.piggy-box {
+  background: #2e365f;
+  border: 2px solid #d8bd7d;
+  border-radius: 16px;
+  text-align: center;
+  padding: 20px;
+}
+.piggy-box h3 {
+  margin-bottom: 10px;
+  color: #d8bd7d;
+}
+.combined-savings {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* ===== Loan Summary ===== */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.summary-grid div {
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+.summary-value {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #d8bd7d;
+}
+
+/* ===== Amortization Table ===== */
+.amortization-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.amortization-table th,
+.amortization-table td {
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px;
+  text-align: right;
+}
+.amortization-table th {
+  background: #2e365f;
+  text-align: center;
+}
+.amortization-table td:first-child {
+  text-align: center;
+}
+.amortization-table tr:nth-child(even) {
+  background: rgba(255,255,255,0.05);
+}
+.amortization-table tr.font-bold {
+  font-weight: bold;
+  background: rgba(255,255,255,0.15);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+  color: #b9c7d9;
+  margin-top: 40px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .combined-savings {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
