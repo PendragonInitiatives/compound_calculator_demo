@@ -182,9 +182,9 @@ function updateChart(schedule, paymentsPerYear) {
     }
   });
 
-  if (window.loanChart) {
-    window.loanChart.destroy();
-  }
+ if (window.loanChart instanceof Chart) {
+  window.loanChart.destroy();
+}
   const ctx = document.getElementById("loanChart").getContext("2d");
   window.loanChart = new Chart(ctx, {
     type: "line",
