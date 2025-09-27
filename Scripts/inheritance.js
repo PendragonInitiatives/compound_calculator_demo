@@ -105,30 +105,34 @@ function calculateInheritance() {
     age++;
   }
 
-  // Chart
-  updateInheritanceChart(labels, taxableSeries, nonTaxableSeries);
+    // Chart
+    updateInheritanceChart(labels, taxableSeries, nonTaxableSeries);
 
-  // Table
-  updateInheritanceTable(rows);
+    // Table
+    updateInheritanceTable(rows);
 
-  // Summary
-  const finalRow = rows[rows.length - 1];
-  const finalTotal = finalRow.taxable + finalRow.nonTaxable;
-  const inheritanceTax = finalRow.taxable * 0.17;
-  const taxIfNoStrategy = totalStart * 0.17; // simple: 17% of starting taxable
-  const taxSaved = taxIfNoStrategy - inheritanceTax;
+    // ===== Summary =====
+    const finalRow = rows[rows.length - 1];
+    const finalTotal = finalRow.taxable + finalRow.nonTaxable;
+    const inheritanceTax = finalRow.taxable * 0.17;
+    const taxIfNoStrategy = totalStart * 0.17; // simple: 17% of starting taxable
+    const taxSaved = taxIfNoStrategy - inheritanceTax;
 
-  let summaryText = `<p>At age ${finalRow.age}, your super is worth <strong>$${finalTotal.toFixed(0)}</strong>.</p>`;
-  if (finalRow.taxable <= 0) {
+    let summaryText = `<p>At age ${finalRow.age}, your super is worth <strong>$${finalTotal.toFixed(0)}</strong></p>`;
+
+if (finalRow.taxable <= 0) {
     summaryText += `<p>✅ You converted all of your super into non-taxable. No inheritance tax payable.</p>`;
-  } else {
-    summaryText += `<p>Of this, <strong>$${finalRow.nonTaxable.toFixed(0)}</strong> is non-taxable and <strong>$${finalRow.taxable.toFixed(0)}</strong> is still taxable.</p>`;
-    summaryText += `<p>If you passed away, your heirs would pay about <strong>$${inheritanceTax.toFixed(0)}</strong> in tax (17% of taxable).</p>`;
-    summaryText += `<p>You saved about <strong>$${taxSaved.toFixed(0)}</strong> compared to doing nothing.</p>`;
-  }
-
-  document.getElementById("inheritanceSummary").innerHTML = summaryText;
+    summaryText += `<p>🎉 You saved about <strong>$${taxIfNoStrategy.toFixed(0)}</strong> compared to no strategy.</p>`;
+} else {
+    summaryText += `<p>Of this, <strong>$${finalRow.nonTaxable.toFixed(0)}</strong> is non-taxable.</p>`;
+    summaryText += `<p>If you passed away, your heirs would pay about <strong>$${inheritanceTax.toFixed(0)}</strong> in tax.</p>`;
+    summaryText += `<p>💡 Without this strategy, tax could have been as high as <strong>$${taxIfNoStrategy.toFixed(0)}</strong>.</p>`;
+    summaryText += `<p>🎉 You saved about <strong>$${taxSaved.toFixed(0)}</strong> compared to no strategy.</p>`;
 }
+
+document.getElementById("inheritanceSummary").innerHTML = summaryText;
+} // <--- closes calculateInheritance()
+
 
 /* ===== Chart ===== */
 function updateInheritanceChart(labels, taxableSeries, nonTaxableSeries) {
@@ -183,3 +187,4 @@ function updateInheritanceTable(rows) {
 
 /* ===== Run on Load ===== */
 window.onload = calculateInheritance;
+

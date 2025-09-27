@@ -8,17 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <h1 class="brand">PM Project Change</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="repayments.html">Home Loan Calculator</a></li>
-        <li><a href="inheritance.html" class="active">Inheritance Tax Reduction</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div id="site-header"></div>
 
   <!-- Hero -->
   <section class="hero small">
@@ -90,6 +80,7 @@
     <div class="calc-section piggy-box">
       <h3>🎯 Final Outcome at Age 75</h3>
       <div id="inheritanceSummary"></div>
+      <div id="finalResults" class="results-box"></div>
     </div>
 
     <!-- Results: Table -->
@@ -118,6 +109,6 @@
   <!-- Scripts -->
   <script src="scripts/shared.js"></script>
   <script src="scripts/inheritance.js"></script>
-
+ <script src="Scripts/header.js"></script>
 </body>
 </html>

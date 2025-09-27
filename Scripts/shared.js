@@ -21,9 +21,48 @@ function showInfo(type) {
 }
 
 /* Currency Formatter */
-function formatCurrency(num) {
-  return "$" + num.toLocaleString(undefined, { maximumFractionDigits: 0 });
+function formatCurrency(value) {
+  if (isNaN(value)) return "$0";
+  return new Intl.NumberFormat("en-AU", {
+    style: "currency",
+    currency: "AUD",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+  }).format(value);
 }
+// shared.js
+function formatInputCurrency(input) {
+  let value = input.value.replace(/,/g, ""); // remove commas
+  if (!isNaN(value) && value !== "") {
+    input.value = new Intl.NumberFormat("en-AU").format(value);
+  }
+}
+
+// Apply formatting only after user finishes typing (on blur)
+document.addEventListener("DOMContentLoaded", () => {
+  ["initialDeposit", "regularDeposit"].forEach(id => {
+    const input = document.getElementById(id);
+    if (input) {
+      // While typing → only digits allowed
+      input.addEventListener("input", () => {
+        input.value = input.value.replace(/[^\d]/g, ""); // strip non-digits
+      });
+
+      // On blur → format with commas
+      input.addEventListener("blur", () => {
+        if (input.value !== "") {
+          input.value = new Intl.NumberFormat("en-AU", {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+          }).format(input.value);
+        }
+      });
+    }
+  });
+});
+
+
+
 
 /* Percentage Formatter */
 function formatPercent(num) {

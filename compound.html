@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compound Interest Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="Scripts/shared.js"></script>
+  <script src="Scripts/compound.js" defer></script>
+</head>
+<body>
+  <!-- Header -->
+    <div id="site-header"></div>
+
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Compound Interest Calculator</h2>
+    <p>See how your savings grow over time with compound interest.</p>
+  </section>
+
+  <!-- Calculator -->
+  <main class="calculator-container">
+
+    <!-- Inputs -->
+  <div class="calc-section">
+    <h3>💰 Savings Inputs</h3>
+    <div class="input-grid">
+      <label>Initial Deposit ($)
+        <input type="text" id="initialDeposit" placeholder="Enter amount">
+      </label>
+      <label>Regular Deposit ($)
+        <input type="text" id="regularDeposit" placeholder="Enter amount">
+      </label>
+
+      <label>Deposit Frequency
+        <select id="depositFrequency">
+          <option>Weekly</option>
+          <option>Fortnightly</option>
+          <option>Monthly</option>
+          <option>Annually</option>
+        </select>
+      </label>
+      <label>Compounding Frequency
+        <select id="compoundFrequency">
+          <option>Annually</option>
+          <option>Monthly</option>
+        </select>
+      </label>
+      <label>Years
+        <input type="number" id="years" placeholder="10">
+      </label>
+      <label>Annual Interest Rate (%)
+        <input type="number" id="annualInterestRate" placeholder="5.00">
+      </label>
+    </div>
+    <button class="cta-button" onclick="calculateCompound()" aria-label="Calculate compound interest">Calculate</button>
+  </div>
+
+
+
+    <!-- Results -->
+    <div class="calc-section piggy-box">
+      <h3>🎯 Final Outcome</h3>
+      <div id="compoundSummary"></div>
+    </div>
+
+    <div class="calc-section">
+      <h3>📈 Growth Over Time</h3>
+      <canvas id="compoundChart"></canvas>
+    </div>
+
+    <div class="calc-section">
+      <h3>📑 Yearly Breakdown</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Start Balance</th>
+            <th>Deposits</th>
+            <th>Interest</th>
+            <th>End Balance</th>
+          </tr>
+        </thead>
+        <tbody id="compoundTable"></tbody>
+      </table>
+    </div>
+  </main>
+
+    <!-- Footer -->
+        <div id="site-footer"></div>
+    <script src="Scripts/header.js"></script>
+    <script src="Scripts/footer.js"></script>
+</body>
+</html>
