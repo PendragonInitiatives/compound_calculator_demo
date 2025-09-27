@@ -234,17 +234,53 @@ input, select {
 /* Final outcome two-column layout */
 #compoundSummary {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  grid-template-columns: 1fr 1fr;/* labels in left, values in right */
+  gap: 10px 20px;
   text-align: left;
-  max-width: 600px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+#compoundsummary .label {
+  font-weight: bold;
+  color: #fff;
+}
+
+
+
+/* Final outcome layout */
+.outcome-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 40px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-#compoundSummary p {
-  margin: 5px 0;
+.outcome-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
   font-size: 18px;
+  white-space: nowrap; /* stops wrapping */
 }
+
+.outcome-row span {
+  color: #fff;
+}
+
+.outcome-row .value {
+  color: #fff; /* default for all values */
+  margin-left: 15px;
+}
+
+.outcome-row .final-balance {
+  color: #d8bd7d; /* gold for final balance */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
 
 /* Responsive: stack inputs on mobile */
 @media (max-width: 768px) {

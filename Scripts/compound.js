@@ -63,17 +63,18 @@ const regularDeposit = parseFloat(document.getElementById("regularDeposit").valu
   const regularDeposits = totalDeposits - initialDeposit;
 
 summaryDiv.innerHTML = `
-  <div class="outcome-grid">
-    <div>
-      <p>Initial Deposit: <strong>${formatCurrency(initialDeposit)}</strong></p>
-      <p>Regular Deposits: <strong>${formatCurrency(regularDeposits)}</strong></p>
+  <div class="outcome-columns">
+    <div class="outcome-col">
+      <div class="outcome-row"><span>Initial Deposit</span><strong class="value">${formatCurrency(initialDeposit)}</strong></div>
+      <div class="outcome-row"><span>Regular Deposits</span><strong class="value">${formatCurrency(regularDeposits)}</strong></div>
     </div>
-    <div>
-      <p>Total Interest: <strong>${formatCurrency(totalInterest)}</strong></p>
-      <p>Final Balance: <strong>${formatCurrency(finalBalance)}</strong></p>
+    <div class="outcome-col">
+      <div class="outcome-row"><span>Total Interest</span><strong class="value">${formatCurrency(totalInterest)}</strong></div>
+      <div class="outcome-row"><span>Final Balance</span><strong class="value final-balance">${formatCurrency(finalBalance)}</strong></div>
     </div>
   </div>
 `;
+
 
   updateCompoundChart(labels, balances);
   updateCompoundTable(rows);
