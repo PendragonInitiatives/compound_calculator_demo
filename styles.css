@@ -379,6 +379,7 @@ nav a.active {
   text-decoration: underline;
   color: #d8bd7d; /* gold highlight */
 }
+
 /* ==== Responsive (mobile view) ==== */
 @media (max-width: 768px) {
 .input-grid label {
