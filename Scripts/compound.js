@@ -9,7 +9,7 @@ function calculateCompound() {
   const annualRate = (parseFloat(document.getElementById("annualInterestRate").value) || 0) / 100;
 
   // === Run simulation ===
-  const rows = simulateCompound(initialDeposit, regularDeposit, years, annualRate);
+  const rows = simulateCompound(initialDeposit, convertToYearly(regularDeposit, depositFrequency), years, annualRate);
   const labels = rows.map(r => r.year);
 
   // === Outputs ===
@@ -56,14 +56,28 @@ function simulateCompound(initialDeposit, yearlyDeposit, years, rate) {
     totalInterest += interest;
 
     rows.push({
-      year,
-      totalDeposits,
-      totalInterest,
-      endBalance: balance
-    });
+  year,
+  startBalance: balance - yearlyDeposit - interest, // before this year's changes
+  deposit: yearlyDeposit,
+  interest: interest,
+  closingBalance: balance,
+  totalDeposits,
+  totalInterest,
+  endBalance: balance // keep for chart compatibility
+});
   }
 
   return rows;
+}
+
+function convertToYearly(amount, frequency) {
+  switch (frequency) {
+    case "Weekly": return amount * 52;
+    case "Fortnightly": return amount * 26;
+    case "Monthly": return amount * 12;
+    case "Annually": return amount;
+    default: return amount;
+  }
 }
 
 // === CHART FUNCTION: draw stacked bar ===
@@ -161,11 +175,12 @@ function updateCompoundTable(rows) {
   rows.forEach(r => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${r.year}</td>
-      <td>${formatCurrency(r.totalDeposits)}</td>
-      <td>${formatCurrency(r.totalInterest)}</td>
-      <td>${formatCurrency(r.endBalance)}</td>
-    `;
+  <td>${r.year}</td>
+  <td>${formatCurrency(r.startBalance)}</td>
+  <td>${formatCurrency(r.deposit)}</td>
+  <td>${formatCurrency(r.interest)}</td>
+  <td>${formatCurrency(r.closingBalance)}</td>
+`;
     tbody.appendChild(tr);
   });
 }

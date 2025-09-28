@@ -1,0 +1,53 @@
+[33mcommit 3ce7c30af5fcbd12c194fff7ff7fdfac05efd4ae[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: PendragonInitiatives <alanapendrick@pmprojectchange.com.au>
+Date:   Sun Sep 28 10:07:49 2025 +1000
+
+    Graph v1 working
+
+[33mcommit e3c58e6249388cf29c32d1353c7296f1d9ec1965[m
+Author: PendragonInitiatives <alanapendrick@pmprojectchange.com.au>
+Date:   Sat Sep 27 20:51:24 2025 +1000
+
+    add styled gold nav
+
+[33mcommit 8d3aa7d72375fad865e532e83f9d355f3bcc8753[m
+Author: PendragonInitiatives <alanapendrick@pmprojectchange.com.au>
+Date:   Sat Sep 27 20:41:59 2025 +1000
+
+    add styled Home and Coming soon pages, upate nav
+
+[33mcommit bfe7970dc29ba32588cce1916955608006b95ec6[m
+Author: PendragonInitiatives <alanapendrick@pmprojectchange.com.au>
+Date:   Sat Sep 27 20:27:34 2025 +1000
+
+    Improve Final Outcome layout: aligned columns, stacked values, final balance in gold
+
+[33mcommit d30b14ff86a4daaa4ec195e8ced73ffa83c1e850[m
+Author: PendragonInitiatives <alanapendrick@pmprojectchange.com.au>
+Date:   Sat Sep 27 19:53:39 2025 +1000
+
+    Fix input grid: 3-column layout and responsive improvements
+
+[33mcommit d5834726ecfad1040397f22a2a4d0eb72433bc8d[m
+Author: PendragonInitiatives <alanapendrick@pmprojectchange.com.au>
+Date:   Sat Sep 27 19:13:36 2025 +1000
+
+    Strip project down to compound calculator only
+
+[33mcommit dba1f622ab13136de2a60322ebff9881661338b4[m
+Author: PendragonInitiatives <alanapendrick@pmprojectchange.com.au>
+Date:   Sat Sep 27 17:54:56 2025 +1000
+
+    Update compound calculator layout, padding, responsive fixes
+
+[33mcommit f82c22cb02aad0283f3398cbca732c7ce4d85cc2[m
+Author: PendragonInitiatives <alanapendrick@pmprojectchange.com.au>
+Date:   Thu Sep 18 17:19:31 2025 +1000
+
+    Update repayments & script.js, add inheritance calculator files
+
+[33mcommit d4220ec2641a9760eae96a00b5bb275112eeb2c7[m
+Author: PendragonInitiatives <alanapendrick@pmprojectchange.com.au>
+Date:   Wed Sep 17 23:06:53 2025 +1000
+
+    First commit - add website files

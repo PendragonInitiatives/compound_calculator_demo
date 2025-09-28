@@ -54,9 +54,12 @@
       <label>Annual Interest Rate (%)
         <input type="number" id="annualInterestRate" placeholder="5.00">
       </label>
+        <div class= "button-container">
+        <button class="cta-button" onclick="calculateCompound()" aria-label="Calculate compound interest">
+          Calculate
+        </button>
+      </div>
     </div>
-    <button class="cta-button" onclick="calculateCompound()" aria-label="Calculate compound interest">Calculate</button>
-  </div>
 
 
 
@@ -75,14 +78,15 @@
       <h3>📑 Yearly Breakdown</h3>
       <table>
         <thead>
-          <tr>
-            <th>Year</th>
-            <th>Start Balance</th>
-            <th>Deposits</th>
-            <th>Interest</th>
-            <th>End Balance</th>
-          </tr>
-        </thead>
+        <tr>
+          <th>Year</th>
+          <th>Start Balance</th>
+          <th>Deposit</th>
+          <th>Interest</th>
+          <th>Closing Balance</th>
+        </tr>
+      </thead>
+
         <tbody id="compoundTable"></tbody>
       </table>
     </div>

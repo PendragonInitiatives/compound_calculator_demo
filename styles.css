@@ -7,10 +7,17 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1, h2 {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   margin: 0 0 10px;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin: 0 0 10px;
+  text-align: center;
 }
 
 a {
@@ -112,6 +119,7 @@ input, select, button, .calc-section label, .calc-section p {
 }
 
 
+
 /* ==== Calculator Container ==== */
 .calculator-container {
   max-width: 900px;
@@ -122,7 +130,7 @@ input, select, button, .calc-section label, .calc-section p {
 /* ==== Calculator Sections ==== */
 .calc-section {
   background: rgba(255,255,255,0.05);
-  border: 2px solid rgba(255,255,255,0.1);
+  border: 2px solid #d8bd7d;
   border-radius: 16px;
   padding: 20px;
   margin-bottom: 15px;        /* spacing between inputs */
@@ -134,6 +142,55 @@ input, select, button, .calc-section label, .calc-section p {
   font-weight: bold;
   color: #d8bd7d;      /* gold */
 }
+/* Table layout */
+.calc-section table {
+  width: 100%;
+  border-collapse: collapse; /* ensures borders line up */
+  table-layout: fixed; /* evenly distribute columns */
+}
+
+/* Headers and cells */
+.calc-section th,
+.calc-section td {
+  padding: 8px 12px;
+  text-align: right; /* numbers aligned to the right */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* 50% transparent border */
+  color: #fff;
+}
+
+/* Left-align first column (Year) */
+.calc-section th:first-child,
+.calc-section td:first-child {
+  text-align: center;
+}
+
+/* Header row */
+.calc-section thead th {
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.05); /* subtle background */
+}
+
+/* Final row highlighted in gold */
+.calc-section tbody tr:last-child {
+  font-weight: bold;
+  border: 2px solid #d8bd7d; /* thicker top border */
+  background-color: transparent; /* removes tint*/
+}
+/* Default text for last row (keep white) */
+.calc-section tbody tr:last-child td {
+  color: #fff;
+}
+
+/* Only Closing Balance (last cell) in gold */
+.calc-section tbody tr:last-child td:last-child {
+  color: #d8bd7d;
+}
+
+.calc-section tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+
 
 /* ==== Form Labels & Inputs ==== */
 label {
@@ -146,6 +203,14 @@ label {
   font-weight: bold;
   color: #fff;font-size:1rem;
 }
+
+.input-grid .button-container {
+  flex: 1 1 100%; /* make it take a full row*/
+  display: flex; /* enable flexbox inside */
+  justify-content: center; /* center the button */
+  margin-top: 10px;    /* space from inputs */
+  margin-bottom: 30px;   /* no bottom margin */
+} 
 
 input, select {
   width: 100%;
