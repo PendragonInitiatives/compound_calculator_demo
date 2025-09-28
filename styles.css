@@ -246,6 +246,12 @@ input, select {
   color: #fff;
 }
 
+#compoundChart {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 10px;
+  max-height: 500px;
+}
 
 
 /* Final outcome layout */
@@ -280,6 +286,10 @@ input, select {
   font-weight: bold;
 }
 
+.chartjs-tooltip .final {
+  color: #d8bd7d !important;
+  font-weight: bold;
+}
 
 
 /* Responsive: stack inputs on mobile */
